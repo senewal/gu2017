@@ -6,6 +6,6 @@ use classes\base\Controller;
 
 class MainController extends Controller {
     public function actionIndex () {
-        echo "Hello!";
+        echo "Hello, world!:)";
     }
 }
