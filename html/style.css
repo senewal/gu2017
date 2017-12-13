@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+#wrapper {
+  max-width: 575px;
+  padding: 0; }
+
+.buy-list {
+  padding: 1rem;
+  font-size: 1.6rem; }
+
+.buy-list-item {
+  padding-bottom: 0.5rem; }
+
+.custom-control-indicator {
+  height: 2rem;
+  width: 2rem; }
+
+.custom-control-description {
+  padding-left: 1.2rem; }
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-description {
+  text-decoration: line-through;
+  color: #ddd; }
+
+#add-list-item {
+  position: fixed;
+  left: 70%;
+  top: 80%; }
+  #add-list-item .btn-lg {
+    font-size: 1.6rem; }
+
+#search-list-item .badge {
+  font-size: 1rem;
+  margin-bottom: 0.25rem; }
+
+/*# sourceMappingURL=style.css.map */
