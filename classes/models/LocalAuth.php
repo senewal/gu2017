@@ -65,7 +65,6 @@ class LocalAuth {
         if (empty($data['login'])) return false;
         if (empty($data['password'])) return false;
 
-        /* sql get user and check */
         $sql = 'SELECT * FROM `users` WHERE `login` = "' . $data['login'] . '"';
         $pdo = APP::$app->db->pdo;
         try {

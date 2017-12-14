@@ -1,3 +1,13 @@
+<?php
+
+$nowPage = $_SERVER['REQUEST_URI'];
+$navigation = array(
+    '/' => 'Home',
+    '#' => 'История покупок',
+    '/about' => 'О проекте'
+);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,9 +46,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="#">История покупок</a>
-                    <a class="nav-item nav-link" href="#">О проекте</a>
+                    <?php foreach ($navigation as $href => $label) : ?>
+                        <?php if ($href == $nowPage) : ?>
+                            <a class="nav-item nav-link active" href="<?=$href?>"><?=$label?> <span class="sr-only">(current)</span></a>
+                        <?php else : ?>
+                            <a class="nav-item nav-link" href="<?=$href?>"><?=$label?></a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </nav>

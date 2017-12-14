@@ -4,10 +4,10 @@ namespace classes\controllers;
 
 use classes\base\Controller;
 
-class MainController extends Controller {
+class AboutController extends Controller {
     public function actionIndex () {
         $this->layout = 'layout';
-        echo $this->render('main', array(
+        echo $this->render('about', array(
             'styles' => array(
                 DIR_TO_CSS . '/style.css'
             ),
