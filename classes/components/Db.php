@@ -28,4 +28,42 @@ class Db implements ComponentInterface {
         $this->pdo->exec("use " . $this->dbname);
         return true;
     }
+
+    public function insert ($sql) {
+        $pdo = $this->pdo;
+        try {
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            return $pdo->lastInsertId();
+        } catch (\PDOException $e) {
+//            echo $sql . "<br>";
+//            echo $e . "<br>";
+            return -1;
+        }
+    }
+
+    public function select ($sql) {
+        $pdo = $this->pdo;
+        try {
+            $rows = $pdo->query($sql);
+            $rowArray = $rows->fetchAll();
+            if (count($rowArray) > 0) return $rowArray;
+            return array();
+        } catch (\PDOException $e) {
+            return array();
+        }
+    }
+
+    public function arrayToSql ($data) {
+        $sql_names = array();
+        $sql_values = array();
+        foreach ($data as $name => $value) {
+            array_push($sql_names, '`' . $name . '`');
+            array_push($sql_values, '"' . $value . '"');
+        }
+        return array(
+            'sql_names' => join(",", $sql_names),
+            'sql_values' => join(",", $sql_values)
+        );
+    }
 }

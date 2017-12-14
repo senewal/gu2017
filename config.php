@@ -14,6 +14,12 @@ define('DB_CHARSET', 'utf8');
 /* APP VERSION */
 define('APP_VERSION', time());
 
+/* DIRS */
+define('DIR_TO_HTML', __DIR__ . '/html');
+
+define('DIR_TO_CSS', '/public/css');
+define('DIR_TO_JS', '/public/js');
+
 if (PHP_VIEW_ERRORS) {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
