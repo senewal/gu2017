@@ -16,4 +16,25 @@ class MainController extends Controller {
             )
         ));
     }
+
+    public function actionSaveListToDb () {
+    }
+
+    public function actionSendListToUser () {
+    }
+
+    public function actionRemoveListFromDb () {
+    }
+
+    public function actionChangeListStatus () {
+    }
+
+    public function actionAddProductToList () {
+    }
+
+    public function actionRemoveProductFromList () {
+    }
+
+    public function actionChangeProductStatus () {
+    }
 }

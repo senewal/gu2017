@@ -100,7 +100,8 @@ INSERT INTO `products` (`id`, `name`, `unit_id`) VALUES
 
 CREATE TABLE `products_lists` (
   `product_id` int(11) NOT NULL,
-  `list_id` int(11) NOT NULL
+  `list_id` int(11) NOT NULL,
+  `product_status` tinyint(1) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
