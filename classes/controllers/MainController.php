@@ -17,6 +17,13 @@ class MainController extends Controller {
         ));
     }
 
+
+    public function actionGetUserList () {
+    }
+
+    public function actionGetUserListArchive () {
+    }
+
     public function actionSaveListToDb () {
     }
 
