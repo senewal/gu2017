@@ -14,5 +14,12 @@ $tr.addClass('row1');
 }
 
     });
+    
+    $('table tr').click(function(event) {
+        if (event.target.type !== 'checkbox') {
+            $(':checkbox', this).click(); 
+        }
+    }); 
+
 })
 
