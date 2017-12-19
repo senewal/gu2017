@@ -102,6 +102,7 @@ CREATE TABLE `products_lists` (
   `product_id` int(11) NOT NULL,
   `list_id` int(11) NOT NULL,
   `product_status` tinyint(1) NOT NULL,
+  `price` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
