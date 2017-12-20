@@ -43,7 +43,7 @@ body {
 
 #wrapper {
 	/* Center wrapper perfectly */
-	width: 300px;
+	max-width: 575px;
 	height: 400px;
 	position: absolute;
 	left: 50%;
@@ -93,7 +93,7 @@ LOGIN FORM
 *******************/
 
 .login-form {
-	width: 300px;
+	width: 400px;
 	margin: 0 auto;
 	position: relative;
 	z-index:5;
@@ -126,12 +126,20 @@ HEADER
 }
 
 .login-form .header span {
-	font-size: 11px;
+	font-size: 14px;
 	line-height: 16px;
 	color: #678889;
 	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
 }
 
+.login-form .psd {
+    font-size: 14px;
+	line-height: 16px;
+	color: #678889;
+	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+    margin-top: 15px;
+    margin-bottom: -20px;
+}
 /*******************
 CONTENT
 *******************/
@@ -142,7 +150,8 @@ CONTENT
 
 /* Input field */
 .login-form .content .input {
-	width: 188px;
+	width: 280px;
+    height: 30px;
 	padding: 15px 25px;
 	
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -219,7 +228,7 @@ FOOTER
 *******************/
 
 .login-form .footer {
-	padding: 25px 30px 40px 30px;
+	padding: 25px 40px 40px 30px;
 	overflow: auto;
 	
 	background: #d4dedf;
