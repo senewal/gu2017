@@ -28,7 +28,7 @@
   position: fixed;
   left: 70%;
   top: 80%; }
-  #add-list-item .btn-lg {
+#add-list-item .btn-lg {
     font-size: 1.6rem; }
 
 #search-list-item .badge {
@@ -49,5 +49,56 @@
 }
 
 .lead {
-  color: #9400D3;
+    color: #9400D3;
 }
+
+/*Зачеркнуть строку таблицы */
+table{
+        border-spacing: 0;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+
+th{
+    padding: 10px;
+        position: relative;
+        border: 1px solid #ccc;
+}
+    td{
+        padding: 10px;
+        position: relative;
+        border: 1px solid #ccc;
+    }
+
+.row1 {
+  font-size: 15px; 
+    color:#9400D3;  
+}
+.rowcheck td:before{
+  
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -2px;
+        right: -2px;
+        height: 1px;
+        border-top: 2px solid #ddd;
+    
+}
+.rowcheck {
+    color:#ddd; 
+    font-size: 15px;
+}
+
+
+/*tr.deleted td:before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -2px;
+        right: -2px;
+        height: 1px;
+        border-top: 2px solid red;
+
+    }
+*/

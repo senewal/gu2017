@@ -21,6 +21,11 @@ class LocalAuth {
         setCookie('password', $this->data['password'], time() + 31 * 24 * 3600, '/');
     }
 
+    public function removeCookies () {
+        setCookie('login', null, time() - 3600, '/');
+        setCookie('password', null, time() - 3600, '/');
+    }
+
     /*
      * return -1 when error
      * return {id} when success
@@ -32,7 +37,8 @@ class LocalAuth {
         if (empty($data['login'])) return -1;
         if (empty($data['password'])) return -1;
         if (empty($data['email'])) return -1;
-        if (empty($data['permission_id'])) return -1;
+//        if (empty($data['permission_id'])) return -1;
+        $data['permission_id'] = 1;
         $data['registration_date'] = date("Y-m-d");
         $this->data = $data;
 
@@ -74,6 +80,7 @@ class LocalAuth {
                 if ($rowArray[0]['password'] == $data['password']) {
                     $this->isLogin = true;
                     $this->data = $rowArray[0];
+                    $this->setCookies();
                     return true;
                 }
             }

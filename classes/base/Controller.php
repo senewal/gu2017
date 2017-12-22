@@ -34,4 +34,12 @@ abstract class Controller {
             throw new \Exception('layout not found!!!' . $fileLayout);
         }
     }
+
+    public function addCssFile ($name) {
+        return DIR_TO_CSS . '/' . $name . '.css?v=' . APP_VERSION;
+    }
+
+    public function addJsFile ($name) {
+        return DIR_TO_JS . '/' . $name . '.js?v=' . APP_VERSION;
+    }
 }

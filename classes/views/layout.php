@@ -3,9 +3,16 @@
 $nowPage = $_SERVER['REQUEST_URI'];
 $navigation = array(
     '/' => 'Home',
-    '#' => 'История покупок',
+    '/lists' => 'История покупок',
     '/about' => 'О проекте'
 );
+
+if ($this->params['isLogin']) {
+    $navigation['#'] = $this->params['userData']['name'] . ' ' . $this->params['userData']['surname'];
+    $navigation['/login/out'] = 'Logout';
+} else {
+    $navigation['/login'] = 'Авторизация';
+}
 
 ?>
 <!DOCTYPE html>
@@ -13,7 +20,7 @@ $navigation = array(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Список покупок</title>
+    <title><?=$this->params['title']?></title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">

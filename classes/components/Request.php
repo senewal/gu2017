@@ -23,8 +23,8 @@ class Request implements ComponentInterface {
             if (!empty($path[2])) {
                 $actionName = $path[2];
 
-                if (mb_strpos($actionName, '?') !== false) {
-                    $actionName = mb_substr($actionName, 0, mb_strpos($actionName, '?'));
+                if (strpos($actionName, '?') !== false) {
+                    $actionName = mb_substr($actionName, 0, strpos($actionName, '?'));
                 }
                 $this->action = $actionName;
             }
