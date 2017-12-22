@@ -1,65 +1,51 @@
 * {
-    margin: 0;
-    padding: 0;
-}
+  margin: 0;
+  padding: 0; }
 
 #wrapper {
-    max-width: 575px;
-    padding: 0;
-}
+  max-width: 575px;
+  padding: 0; }
 
 .buy-list {
-    padding: 1rem;
-    font-size: 1.6rem;
-    text-transform: capitalize;
-
-}
+  padding: 1rem;
+  font-size: 1.6rem; }
 
 .buy-list-item {
-    padding-bottom: 0.5rem;
-}
+  padding-bottom: 0.5rem; }
 
 .custom-control-indicator {
-    height: 2rem;
-    width: 2rem;
-}
+  height: 2rem;
+  width: 2rem; }
 
 .custom-control-description {
-    padding-left: 1.2rem;
-}
+  padding-left: 1.2rem; }
 
 .custom-checkbox .custom-control-input:checked ~ .custom-control-description {
-    text-decoration: line-through;
-    color: #ddd;
-}
+  text-decoration: line-through;
+  color: #ddd; }
 
 #add-list-item {
-    position: fixed;
-    left: 70%;
-    top: 80%;
-}
-
+  position: fixed;
+  left: 70%;
+  top: 80%; }
 #add-list-item .btn-lg {
-    font-size: 1.6rem;
-}
+    font-size: 1.6rem; }
 
 #search-list-item .badge {
-    font-size: 1rem;
-    margin: 0.25rem;
-
-}
+  font-size: 1rem;
+  margin-bottom: 0.25rem; }
 
 /*# sourceMappingURL=style.css.map */
 
 /* styles for the page about project */
 
 .display-5 {
-    color: #000080;
-    text-transform: uppercase;
-    font-size: 22px;
-    margin-top: -30px;
-    line-height: 47px;
-    letter-spacing: 2px;
+  color: #000080;
+  text-transform: uppercase;
+  font-size: 22px;
+  margin-top: -30px;
+  line-height: 47px;
+  letter-spacing: 2px;
 }
 
 .lead {
@@ -67,45 +53,43 @@
 }
 
 /*Зачеркнуть строку таблицы */
-table {
-    border-spacing: 0;
-    border: 1px solid #ccc;
-    width: 100%;
-}
+table{
+        border-spacing: 0;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
 
-th {
+th{
     padding: 10px;
-    position: relative;
-    border: 1px solid #ccc;
+        position: relative;
+        border: 1px solid #ccc;
 }
-
-td {
-    padding: 10px;
-    position: relative;
-    border: 1px solid #ccc;
-}
+    td{
+        padding: 10px;
+        position: relative;
+        border: 1px solid #ccc;
+    }
 
 .row1 {
-    font-size: 15px;
-    color: #9400D3;
+  font-size: 15px; 
+    color:#9400D3;  
 }
-
-.rowcheck td:before {
-
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -2px;
-    right: -2px;
-    height: 1px;
-    border-top: 2px solid #ddd;
-
+.rowcheck td:before{
+  
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -2px;
+        right: -2px;
+        height: 1px;
+        border-top: 2px solid #ddd;
+    
 }
-
 .rowcheck {
-    color: #ddd;
+    color:#ddd; 
     font-size: 15px;
 }
+
 
 /*tr.deleted td:before{
         content: '';

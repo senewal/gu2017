@@ -8,47 +8,20 @@
           integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="testhtml/style.css">
-    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"-->
-    <!--integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"-->
-    <!--crossorigin="anonymous"></script>-->
-    <script src="testhtml/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
             integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
             crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
             integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
             crossorigin="anonymous"></script>
-    <script src="testhtml/Container.js"></script>
-    <script src="testhtml/Goods.js"></script>
-    <script src="testhtml/GoodsList.js"></script>
     <script>
         $(document).ready(function () {
             $('#add-list-item').on('click', function () {
                 $('#search-list-item').modal('show')
-            });
-
-            var goodsList = new GoodsList().render();
-
-            $(document).on("click", ".goods", function () {
-                var id = $(this).attr('id');
-                var name = $(this).text();
-                $(".buy-list").append(function () {
-                    var item = $("<div />", {
-                        id: id,
-                        class: "buy-list-item"
-                    });
-
-                    var lebel = $("<lebel />", {
-                        class: "custom-control custom-checkbox"
-                    });
-
-                    lebel.append("<input type=\"checkbox\" class=\"custom-control-input\">");
-                    lebel.append("<span class=\"custom-control-indicator\"></span>");
-                    lebel.append("<span class=\"custom-control-description\">" + name +"</span>")
-                    lebel.appendTo(item);
-                    return item
-                })
             })
         })
     </script>
@@ -125,7 +98,15 @@
                             </div>
                         </form>
                     </div>
-                    <div id="goods-list-wrapper" class="modal-body">
+                    <div class="modal-body">
+                        <a href="#" class="badge badge-primary">Молоко</a>
+                        <a href="#" class="badge badge-primary">Хлеб</a>
+                        <a href="#" class="badge badge-primary">Соль</a>
+                        <a href="#" class="badge badge-primary">Сахар</a>
+                        <a href="#" class="badge badge-primary">Оливки</a>
+                        <a href="#" class="badge badge-primary">Курага</a>
+                        <a href="#" class="badge badge-primary">Сок</a>
+                        <a href="#" class="badge badge-primary">Сметана</a>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
