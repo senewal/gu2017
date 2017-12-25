@@ -1,7 +1,8 @@
+var totalSum;
 function myFunction() {
       // инициализация сумм (строки и общей)
   var rowSumm = 0;
-  var totalSum = 0;
+  totalSum = 0;
   var tds = 0;
   var tds2 = 0;
     
@@ -39,4 +40,23 @@ function myFunction() {
   //alert('итоговая сумма: ' + totalSum);
     
     tds2[1].innerHTML = totalSum + " рублей"; 
+    
+}
+
+// Расчет в строке Сэкономлено
+
+function spentFunction() {
+   var spent = document.getElementById('spent').value; 
+    //alert(spent);
+   var planned = totalSum;
+    //alert(planned);
+    var saved = planned - spent;
+    //alert(saved);
+    if (saved > 0) 
+        {
+            save.innerHTML = saved + " рублей";
+        }
+        
+    //else {alert(saved);}
+    
 }
