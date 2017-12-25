@@ -107,6 +107,22 @@ td {
     font-size: 15px;
 }
 
+#spent:active {
+    outline: none;
+}
+
+#spent:focus {
+   outline: none;
+}
+#saved:active {
+    outline: none;
+}
+
+#saved:focus {
+   outline: none;
+}
+
+
 /*tr.deleted td:before{
         content: '';
         position: absolute;
