@@ -53,8 +53,9 @@
                 <button class="btn btn-primary btn-lg"><i class="fa fa-plus" aria-hidden="true"></i></button>
             </div>
             
+    <!--Таблица товаров-->
             
-  <table id="mytab" class="table table-hover">
+  <table  id="mytab" class="table table-hover" onmouseover = "myFunction()" >
   
   <thead>
     <tr style="font-size: 15px; color:#000080;">
@@ -113,7 +114,7 @@
     <tr style="font-size: 15px; color:#000080;">
      <th scope="col">ПОТРАЧЕНО СУММА</th>
       <th scope="col"><form  style = "margin-top: 0px;" name="test" method="post" action="#">
-  <input id = "spent" style="border: 0; color:#000080;" type="text" size="4" onmouseout="spentFunction()"> 
+  <input id = "spent" style="border: 0; color:#FF0000; font-weight:bold;" type="text" size="4" onmouseout="spentFunction()"> 
  </form></th>
       
     </tr>
@@ -125,10 +126,11 @@
   </thead>
              </table>  
             
-             <?--Test Button --?>
+             <!--Test Button 
              
               <input type="button" name="123" id="table" value="TEST Summa" onclick="myFunction()">
-               
+               -->
+            <br> <br>
                <div class="buy-list-item">
                 <label class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input">
