@@ -107,19 +107,19 @@
            <thead>
     <tr style="font-size: 15px; color:#000080;">
      <th scope="col">ЗАПЛАНИРОВАНО СУММА</th>
-      <th scope="col" style = "width: 83px;" ></th>
+      <th id = "planned" scope="col" style = "width: 83px;" ></th>
       
     </tr>
     <tr style="font-size: 15px; color:#000080;">
      <th scope="col">ПОТРАЧЕНО СУММА</th>
-      <th scope="col"><form style = "margin-top: 0px;" name="test" method="post" action="#">
-  <input type="text" size="4"> 
+      <th scope="col"><form  style = "margin-top: 0px;" name="test" method="post" action="#">
+  <input id = "spent" style="border: 0; color:#000080;" type="text" size="4" onmouseout="spentFunction()"> 
  </form></th>
       
     </tr>
     <tr style="font-size: 15px; color:#000080;">
      <th scope="col">СЭКОНОМЛЕНО СУММА</th>
-      <th scope="col"></th>
+      <th id = "save" scope="col"></th>
       
     </tr>
   </thead>
