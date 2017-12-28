@@ -39,14 +39,14 @@
                         class: "buy-list-item"
                     });
 
-                    var lebel = $("<lebel />", {
+                    var label = $("<label />", {
                         class: "custom-control custom-checkbox"
                     });
 
-                    lebel.append("<input type=\"checkbox\" class=\"custom-control-input\">");
-                    lebel.append("<span class=\"custom-control-indicator\"></span>");
-                    lebel.append("<span class=\"custom-control-description\">" + name +"</span>")
-                    lebel.appendTo(item);
+                    label.append("<input type=\"checkbox\" class=\"custom-control-input\">");
+                    label.append("<span class=\"custom-control-indicator\"></span>");
+                    label.append("<span class=\"custom-control-description\">" + name +"</span>");
+                    label.appendTo(item);
                     return item
                 })
             })
