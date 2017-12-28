@@ -33,22 +33,34 @@
             $(document).on("click", ".goods", function () {
                 var id = $(this).attr('id');
                 var name = $(this).text();
-                $(".buy-list").append(function () {
-                    var item = $("<div />", {
-                        id: id,
-                        class: "buy-list-item"
-                    });
+                console.log(id, name);
+                $.post({
+                    url: '/main/ajaxAddUserProduct',
+                    data: {
+                        productId: id
+                    },
+                    dataType: 'json',
+                    success: function (result) {
+                        console.log(result);
+                    }
+                });
 
-                    var label = $("<label />", {
-                        class: "custom-control custom-checkbox"
-                    });
-
-                    label.append("<input type=\"checkbox\" class=\"custom-control-input\">");
-                    label.append("<span class=\"custom-control-indicator\"></span>");
-                    label.append("<span class=\"custom-control-description\">" + name +"</span>");
-                    label.appendTo(item);
-                    return item
-                })
+//                $(".buy-list").append(function () {
+//                    var item = $("<div />", {
+//                        id: id,
+//                        class: "buy-list-item"
+//                    });
+//
+//                    var label = $("<label />", {
+//                        class: "custom-control custom-checkbox"
+//                    });
+//
+//                    label.append("<input type=\"checkbox\" class=\"custom-control-input\">");
+//                    label.append("<span class=\"custom-control-indicator\"></span>");
+//                    label.append("<span class=\"custom-control-description\">" + name +"</span>");
+//                    label.appendTo(item);
+//                    return item
+//                });
             })
         })
     </script>

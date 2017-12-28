@@ -8,6 +8,23 @@ class LocalAuth {
     public $data = array();
     public $isLogin = false;
 
+    public function getUserId () {
+        if ($this->isLogin) {
+            return $this->data['id'];
+        } else {
+            if (isset($_COOKIE['randomId'])) {
+                return $_COOKIE['randomId'];
+            }
+            return $this->setRandomId();
+        }
+    }
+
+    public function setRandomId () {
+        $uniqId = hexdec(uniqid());
+        setCookie('randomId', $uniqId, time() + 31 * 24 * 3600, '/');
+        return $uniqId;
+    }
+
     public function getCookieLogin () {
         return isset($_COOKIE['login']) ? $_COOKIE['login'] : null;
     }

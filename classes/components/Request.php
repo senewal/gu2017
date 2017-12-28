@@ -24,7 +24,7 @@ class Request implements ComponentInterface {
                 $actionName = $path[2];
 
                 if (strpos($actionName, '?') !== false) {
-                    $actionName = mb_substr($actionName, 0, strpos($actionName, '?'));
+                    $actionName = substr($actionName, 0, strpos($actionName, '?'));
                 }
                 $this->action = $actionName;
             }

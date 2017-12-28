@@ -54,7 +54,6 @@ AuthForm.prototype.printError = function (errorMessage) {
 };
 
 AuthForm.prototype.send = function (url, callback) {
-    var self = this;
     $.ajax({
         type: 'POST',
         url: url,

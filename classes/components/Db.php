@@ -36,9 +36,18 @@ class Db implements ComponentInterface {
             $stmt->execute();
             return $pdo->lastInsertId();
         } catch (\PDOException $e) {
-//            echo $sql . "<br>";
-//            echo $e . "<br>";
             return -1;
+        }
+    }
+
+    public function update ($sql) {
+        $pdo = $this->pdo;
+        try {
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            return 1;
+        } catch (\PDOException $e) {
+            return 0;
         }
     }
 
