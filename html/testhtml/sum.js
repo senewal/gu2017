@@ -60,6 +60,6 @@ function spentFunction() {
             save.innerHTML = saved + " рублей";
         }
         
-    //else {alert(saved);}
+    else {save.innerHTML = " Перерасход!";}
     
 }
