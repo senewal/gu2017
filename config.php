@@ -20,6 +20,8 @@ define('DIR_TO_HTML', __DIR__ . '/html');
 define('DIR_TO_CSS', '/public/css');
 define('DIR_TO_JS', '/public/js');
 
+define('SHARE_LINK', '/user/share');
+
 if (PHP_VIEW_ERRORS) {
     error_reporting(E_ALL);
     ini_set('display_errors', 1);

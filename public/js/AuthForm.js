@@ -1,9 +1,24 @@
-function AuthForm () {
+function AuthForm (errorsId) {
+    this.errorsId = errorsId;
     this.form = [];
     this.eqInputsNames = [];
     this.nameToFormId = {};
     this.data = {};
 }
+
+AuthForm.prototype.viewError = function (message) {
+    $(document).scrollTop(0);
+    var div = $('<div />', {
+        'class': 'alert alert-danger',
+        'role': 'alert'
+    });
+    div.html(message);
+    $('#' + this.errorsId).html(div);
+};
+
+AuthForm.prototype.hideError = function () {
+    $('#' + this.errorsId).empty();
+};
 
 AuthForm.prototype.addInput = function (name, regExp, errorMessage) {
     this.form.push({
@@ -31,7 +46,7 @@ AuthForm.prototype.check = function () {
         var value = array.$input.val();
         if (!array.regExp.test(value)) {
             success = false;
-            self.printError(array.errorMessage);
+            self.viewError(array.errorMessage);
         }
         self.data[array.name] = value;
     });
@@ -42,15 +57,11 @@ AuthForm.prototype.check = function () {
             var value2 = self.form[self.nameToFormId[array[1]]].$input.val();
             if (value1 != value2) {
                 success = false;
-                self.printError(array[2]);
+                self.viewError(array[2]);
             }
         });
     }
     return success;
-};
-
-AuthForm.prototype.printError = function (errorMessage) {
-    alert(errorMessage);
 };
 
 AuthForm.prototype.send = function (url, callback) {

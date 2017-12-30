@@ -54,9 +54,9 @@ class LocalAuth {
         if (empty($data['login'])) return -1;
         if (empty($data['password'])) return -1;
         if (empty($data['email'])) return -1;
-//        if (empty($data['permission_id'])) return -1;
         $data['permission_id'] = 1;
         $data['registration_date'] = date("Y-m-d");
+        $data['share_token'] = md5($data['login']) . md5($data['email']);
         $this->data = $data;
 
         $sql_names = array();
@@ -75,9 +75,9 @@ class LocalAuth {
             $stmt->execute();
             $this->isLogin = true;
             $this->setCookies();
-            return $pdo->lastInsertId();
+            $this->data['id'] = $pdo->lastInsertId();
+            return $this->data['id'];
         } catch (\PDOException $e) {
-            echo $e;
             return -1;
         }
     }
@@ -120,5 +120,22 @@ class LocalAuth {
 
     public function hashPassword ($password) {
         return md5($password);
+    }
+
+    public function updateRandomIdToUser () {
+        if (!isset($_COOKIE['randomId'])) {
+            return true;
+        }
+        $randomId = $_COOKIE['randomId'];
+        if (!isset($this->data['id'])) {
+            return true;
+        }
+        $userId = $this->data['id'];
+        if ($userId == null) {
+            return true;
+        }
+        $sql = 'UPDATE `users_products` SET `user_id` = ' . $userId . ', `guest_id` = 0 WHERE `guest_id` = ' . $randomId;
+        APP::$app->db->update($sql);
+        return true;
     }
 }

@@ -1,24 +1,19 @@
-<div id="wrapper">
-    <div class="user-icon"></div>
-    <div class="pass-icon"></div>
-
-    <form name="login-form" class="login-form" action="" method="post">
-
-        <div class="header">
-            <h1>Авторизация</h1>
-            <span>Введите ваши регистрационные данные для входа в ваш личный кабинет. </span>
-        </div>
-
-        <div class="content">
-            <input name="login" type="text" class="input username" placeholder="Логин" onfocus="this.value=''" />
-            <input name="password" type="password" class="input password" placeholder="Пароль" onfocus="this.value=''" />
-        </div>
-
-        <div class="footer">
-            <input type="button" name="submit" value="ВОЙТИ" class="button" />
-            <input type="button" name="submit" value="Регистрация" class="register" />
-        </div>
-
-    </form>
+<div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <h1>Авторизация</h1>
+        <p>Введите ваши регистрационные данные для входа в ваш личный кабинет.</p>
+        <div id="errors"></div>
+        <form>
+            <div class="form-group">
+                <label for="login">Логин</label>
+                <input type="text" class="form-control" id="login" name="login" placeholder="Логин">
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Пароль">
+            </div>
+            <button id="loginBtn" type="button" class="btn btn-primary">ВОЙТИ</button>
+            <button id="registerBtn" type="button" class="btn btn-link">Регистрация</button>
+        </form>
+    </div>
 </div>
-<div class="gradient"></div>

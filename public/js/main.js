@@ -1,3 +1,20 @@
+var viewLogTimeout = null;
+var VIEW_LOG_HIDE_TIME = 6 * 1000; // 6s
+
+function viewLog (status, message) {
+    clearTimeout(viewLogTimeout);
+    $(document).scrollTop(0);
+    var div = $('<div />', {
+        'class': 'alert alert-' + status,
+        'role': 'alert'
+    });
+    div.html(message);
+    $('#logs').html(div);
+    viewLogTimeout = setTimeout(function () {
+        $('#logs').empty();
+    }, VIEW_LOG_HIDE_TIME);
+}
+
 $(document).ready(function () {
     $('#add-list-item').on('click', function () {
         $('#search-list-item').modal('show')
@@ -56,8 +73,32 @@ $(document).ready(function () {
                 }
                 id = result.id;
                 goodsList.appendToList({id: id, name: name}, 'buy-list');
+                viewLog('success', 'Продукт добавлен к списку!')
             }
         });
 
+    });
+
+    $(document).on('click', '#good-list-add', function () {
+        var name = $('#good-list-find').val();
+        if (name.length < 2) return false;
+        $.post({
+            url: '/main/ajaxAddNewProduct',
+            data: {
+                name: name
+            },
+            dataType: 'json',
+            success: function (result) {
+                if (result.result == 0) {
+                    /* todo create view error */
+                    return false;
+                }
+                var id = result.id;
+                var goods = new Goods(id, name);
+                goods.render($("#goods-list-wrapper"));
+                goodsList.appendToList({id: id, name: name}, 'buy-list');
+                viewLog('success', 'Продукт добавлен к списку!')
+            }
+        });
     });
 });

@@ -10,14 +10,22 @@
             <div class="modal-header">
                 <form action="#">
                     <div class="input-group">
-                        <input type="text" id="good-list-find" class="form-control" placeholder="Видите название товара">
+                        <input type="text" id="good-list-find" class="form-control"
+                               placeholder="Видите название товара">
                         <span class="input-group-btn">
-                                <button id="good-list-find-reset" class="btn btn-primary" type="reset"><i class="fa fa-times"></i></button>
+                                <button id="good-list-add" class="btn btn-success" type="reset"><i
+                                            class="fa fa-plus"></i></button>
+                            </span>
+                        <span class="input-group-btn">
+                                <button id="good-list-find-reset" class="btn btn-danger" type="reset"><i
+                                            class="fa fa-times"></i></button>
                             </span>
                     </div>
                 </form>
             </div>
-            <div id="goods-list-wrapper" class="modal-body">
+            <div class="modal-body">
+                <div id="logs"></div>
+                <div id="goods-list-wrapper"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>

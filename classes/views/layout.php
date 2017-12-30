@@ -8,7 +8,8 @@ $navigation = array(
 );
 
 if ($this->params['isLogin']) {
-    $navigation['#'] = $this->params['userData']['name'] . ' ' . $this->params['userData']['surname'];
+    $navigation['/share/all'] = 'Share lists';
+    $navigation['/user'] = $this->params['userData']['name'] . ' ' . $this->params['userData']['surname'];
     $navigation['/login/out'] = 'Logout';
 } else {
     $navigation['/login'] = 'Авторизация';
@@ -41,7 +42,7 @@ if ($this->params['isLogin']) {
     <?php endforeach; ?>
 </head>
 <body>
-<div id="wrapper" class="container-fluid">
+<div class="container-fluid">
     <header>
         <nav class="navbar navbar-expand-xl navbar-dark bg-primary">
             <a class="navbar-brand" href="#">BuyList</a>

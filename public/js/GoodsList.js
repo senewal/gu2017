@@ -47,7 +47,7 @@ GoodsList.prototype.appendToListHistory = function (good, className) {
 GoodsList.prototype.find = function () {
     var self = this;
     $('#good-list-find').val('').on('keyup', function () {
-        self.render($(this).val());
+        self.render($(this).val().toLowerCase());
     });
     $('#good-list-find-reset').on('click', function (e) {
         $(this).val('');
@@ -65,7 +65,7 @@ GoodsList.prototype.render = function (search) {
         success: function (data) {
             for (var i = 0; i < data.goods.length; i++) {
                 var goods = new Goods(data.goods[i].id, data.goods[i].name);
-                goods.render($("#goods-list-wrapper"))
+                goods.render($("#goods-list-wrapper"));
             }
         },
         context: this
